@@ -1,6 +1,6 @@
 S1.3 - Loggin in
 ---------------
-    */etc/passwd*
+    __/etc/passwd__
     seven colon-separated field:
     the login name : encrypted password : numeric user ID : numeric group ID : a comment field : home dir : shell program 
         e.g. tomcat:x:91:91:Tomcat:/usr/share/tomcat5:/bin/sh

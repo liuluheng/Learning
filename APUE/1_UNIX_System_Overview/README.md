@@ -6,7 +6,7 @@ seven colon-separated field:
 
 the login name : encrypted password : numeric user ID : numeric group ID : a comment field : home dir : shell program 
  
-e.g. tomcat:x:91:91:Tomcat:/usr/share/tomcat5:/bin/sh
+    e.g. tomcat:x:91:91:Tomcat:/usr/share/tomcat5:/bin/sh
     
 We can use awk to print selected columns:
 

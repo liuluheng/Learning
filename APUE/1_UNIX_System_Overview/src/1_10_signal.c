@@ -1,11 +1,12 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include "../../include/apue.h"
 
-#define MAXLINE 4096
 static void sig_int(int);
 
 int main(int argc, const char *argv[])
@@ -15,10 +16,7 @@ int main(int argc, const char *argv[])
     int status;
 
     if ( signal(SIGINT, sig_int) == SIG_ERR)
-    {
-        printf("signal errpr\n");
-        exit(-1);
-    }
+        err_quit("signal error");
 
     printf("%% "); // printf requires %% to print %
     while ( fgets(buf, MAXLINE, stdin) != NULL)
@@ -27,10 +25,7 @@ int main(int argc, const char *argv[])
             buf[strlen(buf) - 1] = '\0';
 
         if ( (pid = fork()) < 0)
-        {
-            printf("fork error\n");
-            exit(-1);
-        }
+            err_quit("fork error");
         else if ( pid == 0) // child
         {
             execlp(buf, buf, (char*)0);
@@ -40,10 +35,7 @@ int main(int argc, const char *argv[])
 
         // parent
         if ( (pid = waitpid(pid, &status, 0)) < 0 )
-        {
-            printf("waitpid error\n");
-            exit(-1);
-        }
+            err_quit("waitpid error");
         printf("%%");
     }
 

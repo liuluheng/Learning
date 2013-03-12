@@ -6,7 +6,7 @@ TCP cannot bere described as a 100% reliable protocol; it provides reliable deli
 
 2.5 SCTP
 --------
-The word **association** is used in SCTP instead of **connection** to avoid the connotation that a connection invovles communication between only two IP addresses. An association refers to a communication between two systems, which involve more than two addresssssssssssssssses due to multihoming.
+The word **association** is used in SCTP instead of **connection** to avoid the connotation that a connection invovles communication between only two IP addresses. An association refers to a communication between two systems, which involve more than two address due to multihoming.
 
 2.6 TCP Connection Establishment and Termination
 ------------------------------------------------

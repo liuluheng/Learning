@@ -6,4 +6,3 @@ S6.2 I/O Models
 * signal driven I/O (SIGIO)
 * asynchronous I/O (the POSIX aio_ function)
 
-test ssh

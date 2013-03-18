@@ -37,4 +37,8 @@ The operation of "unlinking a file" does not always mean "deleting the blocks as
 
 Because the i-node number in the directory entry points to an i-node in the same file system, we cannot have a directory entry point to an i-node in a different file system. This is whye the **ln** command cannot cross file systems.
 
+4.15 link, unlink, remove and rename Functions
+----------------------------------------------
+If an implementation supports the creation of hard links to directories, it is restricted to only the superuser. The reason is that doing this can cause loops in the file system.
 
+For a file, *remove* is identical to *unlink*, for a directory, *remove* is idential to *rmdir*

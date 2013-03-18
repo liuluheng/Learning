@@ -30,3 +30,11 @@ On contemporary systems, if the bit is set for a directory, a file in the direct
 + Is the superuser
 
 The directories /tmp and /var/spool/uucppublic are typical candidates for the sticky bit.
+
+4.14 File Systems
+--------------------
+The operation of "unlinking a file" does not always mean "deleting the blocks associated with the file". This is why the function that removes a directory entry is called **unlink**, not delete.
+
+Because the i-node number in the directory entry points to an i-node in the same file system, we cannot have a directory entry point to an i-node in a different file system. This is whye the **ln** command cannot cross file systems.
+
+

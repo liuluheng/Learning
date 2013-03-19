@@ -65,8 +65,10 @@
 16. Does the UNIX System have a fundamental limitation on the depth of a directory tree? To find out, write a program that creates a directory and then changes to that directory, in a loop. Make certain that the length of the absolute pathname of the leaf of this directory is greater than your system PATH_MAX limit. Cna you call getcwd to fetch the directory pathname? How do the standard UNIX System tools deal with this long pathname? Can you archive the directory using either tar or cpio?
 
 17. In Section 3.16, we described the /dev/fd feature. For any user to be able to acess these files, their permission must be rw-rw-rw-. Some programs that create an output file delete the file first, in case it already exists. ignoring the return code:
+
         unlink(path);
         if ((fd = creat(path, FILE_MODE)) < 0)
             err_sys("...");
+
     What happens if path is /dev/fd/1
 

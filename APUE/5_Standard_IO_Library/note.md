@@ -42,5 +42,9 @@ gcc issue a warning for tmpnam
 
     warning: the use of 'tmpnam' is dangerous, better use 'mkstemp'
 
+The tmpnam() function generates a different string each time it is called, up to TMP_MAX times. If it is called more than TMP_MAX times, the behavior is implementation defined.
+
+Although tmpnam() generates names that are difficult to guess, it is nevertheless possible that between the time that tmpnam() returns a pathname, and the time that the program opens it, another program might create that pathname using open(2), or create it as a symbolic link. This can lead to security holes. To avoid such possibilities, use the open(2) O_EXCL flag to open the pathname. Or better yet, use mkstemp(3) or tmpfile(3).
+
 The standard technique often used by the *tmpfile* function is to create a unique pathname by calling *tmpnam*, then create the file, and immediately *unlink* it. Recall from Section 4.15 that unlinking a file does not delete its contents until the file is closed. This way, when the file is closed, either explicitly or on program termination, the contents of the file are deleted.
 

@@ -1,7 +1,9 @@
 1. When reading or writing a disk file, are the functions described in this chapter really unbuffered? Explain.
+    
     No, they all buffered to kernel block buffers. To be specified, the unbuffered I/O refers to the lack of automatic buffering in the user process with these two functions. Each read or wirte invokes a single system call.
 
 2. Write you own dup2 function that perfoms the same service as the dup2 function described in Section 3.12 without calling the fcntl function. Be sure to handle errors correctly.
+    
     Since we cannot get the process table entry directly, here we can use dup to simulate dup2, see 3_2.c
 
 
@@ -32,10 +34,14 @@
     But if fd is 3, we have four, that is to say, we need close fd 4
 
 5. The Bourne shell, Bourne-again shell, and Korn sheel notation
+
         digit1 >& digit2
+        
     says to redirect descriptor digit1 to the same file as descriptor digit2. What is the difference between the two commands:
+      
         ./a.out > outfile  2>&1
         ./a.out 2>1& > outfile
+        
     (Hint: the shell process their command lines from left to right)
     
     First one, let A be the file table entry of outfile. As the command line imply, stand output is pointed to A, then stand error is pointed to A. That is to say, all fd points to A
@@ -43,4 +49,5 @@
     Second one, let B be the file table entry of outfile, T be the terminal file table entry, firstly, stand error is pointed to T, then stand out point to B
 
 6. If you open a file for read-write with the append flag, can you still read from anywhere in the file using lseek? Can you use lseek to replace existing data in the file? Write a program to verify this.
+
     wirte will automatically set the file offset to the end of file before any write behavior. This makes it impossible to wirte anywhere other than the end of the file.

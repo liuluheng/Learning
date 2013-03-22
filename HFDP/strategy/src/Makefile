@@ -1,7 +1,5 @@
 
-TARGET     = ducksim
-
-#MCU        = msp430f5529
+TARGET = ducksimulator
 
 SOURCES = DecoyDuck.cpp \
           Duck.cpp \
@@ -19,8 +17,6 @@ SOURCES = DecoyDuck.cpp \
           RedHeadDuck.cpp \
           RubberDuck.cpp \
           Squeak.cpp 
-
-#INCLUDES = -IInclude
 
 CPPFLAGS   = -O2 -Wall 
 CC       = g++
@@ -48,8 +44,7 @@ $(TARGET): $(OBJECTS)
 	echo "Linking $@"
 	$(CC) $(OBJECTS) -o $@
 	echo
-	echo ">>>> Size of BINARY <<<<"
-	$(SIZE) $(TARGET)
+	echo ">>>> BUILD DONE <<<<"
 	echo
 
 %.o: %.cpp

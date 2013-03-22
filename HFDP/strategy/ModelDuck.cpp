@@ -1,14 +1,21 @@
+#include "Duck.h"
+#include "FlyBehavior.h"
+#include "QuackBehavior.h"
 #include <stdio.h>
-#include "ModelDuck.h"
-#include "FlyNoWay.h"
-#include "Quack.h"
 
-ModelDuck::ModelDuck
+ModelDuck::ModelDuck()
 {
-    d_flyBehavior = new FlyNoWay();
-    d_quackBehavior = new Quack();
+    printf("ModelDuck ctor\n");
+    setFlyBehavior(new FlyNoWay());
+    setQuackBehavior(new Quack());
 }
 
+ModelDuck::~ModelDuck()
+{
+    printf("ModelDuck dtor\n");
+}
+
+void
 ModelDuck::display()
 {
     printf("I'm a model duck\n");

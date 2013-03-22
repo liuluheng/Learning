@@ -1,18 +1,24 @@
 
 #include <stdio.h>
 #include "Duck.h"
-#include "DecoyDuck.h"
-#include "FlyNoWay.h"
-#include "MuteQuack.h"
+#include "FlyBehavior.h"
+#include "QuackBehavior.h"
 
-DecoyDuck::DecoyDuck():
+DecoyDuck::DecoyDuck()
 {
+    printf("DecoyDuck ctor\n");
     setFlyBehavior(new FlyNoWay());
     setQuackBehavior(new MuteQuack());
 }
 
+DecoyDuck::~DecoyDuck()
+{
+    printf("DecoyDuck dtor\n");
+}
 
+void
 DecoyDuck::display()
 {
     printf("I'm a duck Decoy\n");
 }  
+

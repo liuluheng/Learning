@@ -1,14 +1,20 @@
-#include "Quack.h"
-#include "FlyWithWings.h"
-#include "MallardDuck.h"
+#include "Duck.h"
+#include "FlyBehavior.h"
+#include "QuackBehavior.h"
 #include <stdio.h>
 
 MallardDuck::MallardDuck() 
 {
-    d_quackBehavior = new Quack();
-    d_flyBehavior = new FlyWithWings();
+    printf("MallardDuck ctor\n");
+    setQuackBehavior(new Quack());
+    setFlyBehavior(new FlyWithWings());
 }
 
+
+MallardDuck::~MallardDuck() 
+{
+    printf("MallardDuck dtor\n");
+}
 
 void
 MallardDuck::display()

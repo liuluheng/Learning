@@ -1,5 +1,15 @@
-#include "FlyRocketPowered.h"
+#include "FlyBehavior.h"
 #include <stdio.h>
+
+FlyRocketPowered::FlyRocketPowered()
+{
+
+}
+
+FlyRocketPowered::~FlyRocketPowered()
+{
+
+}
 
 void 
 FlyRocketPowered::fly()

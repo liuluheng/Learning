@@ -34,17 +34,16 @@
     
     Otherwise, the while loop would never break
 
-5.5 Why does *tempnam* restrict the *prefix* to five characters?
+5. Why does *tempnam* restrict the *prefix* to five characters?
 
     to limit the file name length
 
-5.6 How would you use the *fsync* function with a standard I/O stream?
+6. How would you use the *fsync* function with a standard I/O stream?
 
     firstly call fflush and then use *fileno* get the file descripter to call fsync
-
     from the description of man page, it is unecessary to call fflush, but we should call it for defence
 
-5.7 In the programs in Figures 1.7 and 1.10, the promp that is printed does not contain a newline, and we do not call *fflush*, what causes the prompt to be output?
+7. In the programs in Figures 1.7 and 1.10, the promp that is printed does not contain a newline, and we do not call *fflush*, what causes the prompt to be output?
 
     *fgets* will automatically flush the standard output
 

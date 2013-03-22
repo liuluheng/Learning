@@ -15,3 +15,8 @@
 *.exe
 *.out
 *.app
+
+# log file
+*.log
+*.txt
+

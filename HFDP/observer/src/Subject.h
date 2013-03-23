@@ -6,12 +6,12 @@ class Observer;
 class Subject 
 {
 public:
-    Subject(){}
-    virtual ~Subject(){}
+    Subject();
+    virtual ~Subject();
 
-	virtual void registerObserver(Observer* obs){}
-	virtual void removeObserver(Observer* obs){}
-	virtual void notifyObservers(){}
+	virtual void registerObserver(Observer* obs) = 0;
+	virtual void removeObserver(Observer* obs) = 0;
+	virtual void notifyObservers() = 0;
 };
 
 #endif

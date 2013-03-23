@@ -4,10 +4,10 @@
 class DisplayElement 
 {
 public:
-    DisplayElement(){}
-    virtual ~DisplayElement(){}
+    DisplayElement();
+    virtual ~DisplayElement();
 
-    virtual void display(){}
+    virtual void display() = 0;
 };
 
 #endif

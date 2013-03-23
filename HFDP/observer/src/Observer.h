@@ -5,10 +5,10 @@ class Observer
 {
 public:
 
-    Observer(){}
-    virtual ~Observer(){}
+    Observer();
+    virtual ~Observer();
 
-    virtual void update(double temp, double humidity, double pressure){}
+    virtual void update(double temp, double humidity, double pressure);
 };
 
 #endif

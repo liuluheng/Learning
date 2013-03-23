@@ -2,6 +2,7 @@
 #ifndef _CURRENTCONDITIONSDISPLAY_H_
 #define _CURRENTCONDITIONSDISPLAY_H_
 
+#include "Subject.h"
 #include "Observer.h"
 #include "DisplayElement.h"
 
@@ -9,7 +10,7 @@ class CurrentConditionsDisplay : public Observer, public DisplayElement
 {
 public:
     CurrentConditionsDisplay(Subject* subject);
-    virtual ~CurrentConditionsDisplay(){}
+    virtual ~CurrentConditionsDisplay();
 
     virtual void update(double temperature, 
                         double humidity, 

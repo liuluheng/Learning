@@ -5,9 +5,13 @@
 CurrentConditionsDisplay::CurrentConditionsDisplay(Subject* subject)
     : d_subject(subject)
 {
-    d_subject.registerObserver(this);
+    d_subject->registerObserver(this);
 }
 
+CurrentConditionsDisplay::~CurrentConditionsDisplay()
+{
+
+}
 
 void 
 CurrentConditionsDisplay::update(double temperature, 

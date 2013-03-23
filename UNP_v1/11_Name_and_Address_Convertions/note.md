@@ -18,6 +18,7 @@ Most modern resolvers provide the function *hstrerror*, which takes an *h_errno*
 
 
 11.5 getservbyname and getservbyport
+-----------------------------------
 
     struct serent
     {
@@ -29,4 +30,10 @@ Most modern resolvers provide the function *hstrerror*, which takes an *h_errno*
 
 Since the port number is returned in **network byte order**, we must not call *htons* storing this into a socket address structure
 
+
+
+11.8 freeeaddrinfo
+------------------
+
+Making a copy of just the *addrinfo* structure and not the structures that it in turn points to is called a **shadow copy**. Copying the *addrinfo* structure and all the structures that it points to is called a **deep copy**.
 

@@ -1,13 +1,15 @@
 #include "HeatIndexDisplay.h"
+#include <stdio.h>
 
-static d_headIndex = 0;
 
 HeatIndexDisplay::HeatIndexDisplay(Subject* subject)
+    : d_heatIndex(0.01)
+    , d_subject(subject)
 {
-    d_subject = subject;
+    d_subject->registerObserver(this);
 }
 
-HeatIndexDisplay::~HeatIndexDisplay
+HeatIndexDisplay::~HeatIndexDisplay()
 {
     
 }
@@ -15,7 +17,7 @@ HeatIndexDisplay::~HeatIndexDisplay
 void
 HeatIndexDisplay::update(double t, double rh, double pressure)
 {
-    d_headIndex = computeHeatIndex(t, rh); 
+    d_heatIndex = computeHeatIndex(t, rh); 
     display();
 }
 
@@ -35,5 +37,5 @@ HeatIndexDisplay::computeHeatIndex(double t, double rh)
 
 void HeatIndexDisplay::display()
 {
-    printf("Heat index is " + d_heatIndex);
+    printf("Heat index is %.2f\n", d_heatIndex);
 }

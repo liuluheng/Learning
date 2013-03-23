@@ -1,25 +1,26 @@
 #ifndef _HEATINDEXDISPLAY_H_
 #define _HEATINDEXDISPLAY_H_
 
+#include "Subject.h"
 #include "Observer.h"
 #include "DisplayElement.h"
 
-class Subject;
 
 class HeatIndexDisplay : public Observer, public DisplayElement
 {
 public:
-    HeatIndexDisplay();
+    HeatIndexDisplay(Subject* subject);
     virtual ~HeatIndexDisplay();
 
-    virtual update(double t, double rh, double pressure);
-    virtual display();
+    virtual void update(double t, double rh, double pressure);
+    virtual void display();
 
 private:
     double computeHeatIndex(double t, double rh);
+
 private:
-    const static    d_headIndex;
-    Subject*        d_subject;
-}
+    double                  d_heatIndex;
+    Subject*                d_subject;
+};
 
 #endif

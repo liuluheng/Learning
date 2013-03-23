@@ -1,4 +1,3 @@
-
 #include "ForecastDisplay.h"
 #include <stdio.h>
 
@@ -12,7 +11,7 @@ ForecastDisplay::ForecastDisplay(Subject* subject)
 void
 ForecastDisplay::update(double temperature, 
                         double humidity, 
-                        double pressure);
+                        double pressure)
 {
     d_lastPressure = d_currentPressure;
     d_currentPressure = pressure;
@@ -22,11 +21,11 @@ void
 ForecastDisplay::display()
 {
     printf("Forecast: \n");
-    if (currentPressure > lastPressure) 
+    if ( d_currentPressure > d_lastPressure) 
     {
         printf("Improving weather on the way!\n");
     } 
-    else if (currentPressure < lastPressure) 
+    else if ( d_currentPressure < d_lastPressure) 
     {
         printf("Watch out for cooler, rainy weather\n");
     }

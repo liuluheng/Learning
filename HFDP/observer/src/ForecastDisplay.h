@@ -3,13 +3,12 @@
 
 #include "DisplayElement.h"
 #include "Observer.h"
-
-class Subject;
+#include "Subject.h"
 
 class ForecastDisplay : public Observer, public DisplayElement
 {
 public:
-    ForecastDisplay();
+    ForecastDisplay(Subject* subject);
     virtual ~ForecastDisplay(){}
 
     virtual void update(double temperature, 
@@ -21,6 +20,7 @@ public:
 private:
     double      d_currentPressure;
     double      d_lastPressure;
-    Subject*    d_weatherData;
-}
+    Subject*    d_subject;
+};
+
 #endif

@@ -1,24 +1,28 @@
 
 TARGET = ducksimulator
 
-SOURCES = DecoyDuck.cpp \
-          Duck.cpp \
-          FakeQuack.cpp \
-          FlyBehavior.cpp \
-          FlyNoWay.cpp \
-          FlyRocketPowered.cpp \
-          FlyWithWings.cpp \
-          MallardDuck.cpp \
-          MiniDuckSimulator.cpp \
-          ModelDuck.cpp \
-          MuteQuack.cpp \
-          Quack.cpp \
-          QuackBehavior.cpp \
-          RedHeadDuck.cpp \
-          RubberDuck.cpp \
-          Squeak.cpp 
+SOURCES = $(shell ls *.cpp)
 
-CPPFLAGS   = -O2 -Wall 
+BIT = $(shell getconf LONG_BIT)
+ifeq ($(MAKECMDGOALS), BIT=32)
+	BIT = 32
+endif
+ifeq ($(MAKECMDGOALS), BIT=64)
+	BIT = 64
+endif
+
+CPPFLAGS   = -Wall -Wextra
+ifeq ($(BIT), 64)
+	CPPFLAGS += -m64
+endif
+
+ifeq ($(MAKECMDGOALS), OPTMODE=DEBUG)
+	CPPFLAGS += -g
+else
+	CPPFLAGS += -O2
+endif
+
+
 CC       = g++
 LD       = ld
 AR       = ar

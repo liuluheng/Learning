@@ -17,3 +17,16 @@ This function is limited to IPv4 addresses, and POSIX specification cautions tha
 Most modern resolvers provide the function *hstrerror*, which takes an *h_errno* value as its only argument and returns a const char* pointer to a description of the error.
 
 
+11.5 getservbyname and getservbyport
+
+    struct serent
+    {
+        char  *s_name;  /* official service name */
+        char  **s_aliases; /* alias list */
+        int   s_port;   /* port number, network-byte order */
+        char  *proto;   /* protocol to use */
+    }
+
+Since the port number is returned in **network byte order**, we must not call *htons* storing this into a socket address structure
+
+

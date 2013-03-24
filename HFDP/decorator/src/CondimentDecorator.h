@@ -1,3 +1,6 @@
+#ifndef _CONDIMENTDECORATOR_H_
+#define _CONDIMENTDECORATOR_H_
+
 #include "Beverage.h"
 #include <string>
 
@@ -9,3 +12,5 @@ public:
 
     virtual std::string getDescription() = 0;
 };
+
+#endif

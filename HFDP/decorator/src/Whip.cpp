@@ -12,11 +12,13 @@ Whip::~Whip()
 
 }
 
+std::string
 Whip::getDescription()
 {
     return d_beverage->getDescription() + ", Whip";
 }
 
+double
 Whip::cost()
 {
     return 0.10 + d_beverage->cost();

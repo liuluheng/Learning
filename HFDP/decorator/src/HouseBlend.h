@@ -7,7 +7,7 @@ class HouseBlend : public Beverage
 {
 public:
     HouseBlend();
-    virtual ~HouseBlend_t ();
+    virtual ~HouseBlend();
     
     virtual double cost()
     {

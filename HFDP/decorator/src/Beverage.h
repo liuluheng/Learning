@@ -9,7 +9,7 @@ public:
     Beverage();
     virtual ~Beverage();
   
-    virtual std::string getDescription() = 0;
+    virtual std::string getDescription();
 	virtual double cost() = 0;
 
 protected:

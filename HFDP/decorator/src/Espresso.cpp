@@ -2,9 +2,8 @@
 
 
 Espresso::Espresso()
-    : d_description("Espresso")
 {
-
+    d_description = "Espresso";
 }
 
 Espresso::~Espresso()

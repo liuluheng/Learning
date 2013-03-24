@@ -2,9 +2,8 @@
 
 
 Decaf::Decaf()
-    : d_description("Decaf Coffee")
 {
-
+    d_description = "Decaf Coffee";
 }
 
 Decaf::~Decaf()

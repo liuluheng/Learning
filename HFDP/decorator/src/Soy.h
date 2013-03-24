@@ -3,6 +3,7 @@
 
 #include "Beverage.h"
 #include "CondimentDecorator.h"
+#include <string>
 
 
 class Soy : public CondimentDecorator

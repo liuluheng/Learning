@@ -8,14 +8,14 @@
 class Milk : public CondimentDecorator
 {
 public:
-    Milk(Beverage bv);
+    Milk(Beverage* bv);
     virtual ~Milk();
 
     virtual std::string getDescription();
     virtual double cost();
 
 private:
-    Beverage  d_beverage;
+    Beverage*     d_beverage;
 };
 
 #endif

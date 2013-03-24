@@ -4,9 +4,8 @@
 
 
 DarkRoast::DarkRoast()
-    : d_description("Dark Roast Coffee")
 {
-
+    d_description = "Dark Roast Coffee";
 }
 
 DarkRoast::~DarkRoast()

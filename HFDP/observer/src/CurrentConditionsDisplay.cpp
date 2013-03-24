@@ -26,7 +26,7 @@ CurrentConditionsDisplay::update(double temperature,
 void 
 CurrentConditionsDisplay::display()
 {
-    printf("Current conditions: %.1f F degress and %.1f humidity", 
+    printf("Current conditions: %.1f F degress and %.1f humidity\n", 
             d_temperature, d_humidity);
 }
 

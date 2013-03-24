@@ -1,6 +1,6 @@
 #include "Observer.h"
 
-ObserverObserver()
+Observer::Observer()
 {
 
 }

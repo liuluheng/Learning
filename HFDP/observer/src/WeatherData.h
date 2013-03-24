@@ -2,9 +2,9 @@
 #define _WEATHERDATA_H_
 
 #include "Subject.h"
+#include "Observer.h"
 #include <vector>
 
-class Observer;
 
 class WeatherData : public Subject
 {
@@ -15,7 +15,7 @@ public:
     virtual ~WeatherData();
 
 	virtual void registerObserver(Observer* obs);
-	virtual void removeObserver(Observer o);
+	virtual void removeObserver(Observer* obs);
 	virtual void notifyObservers();
 
 	void measurementsChanged();

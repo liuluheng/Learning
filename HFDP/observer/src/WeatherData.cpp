@@ -10,6 +10,11 @@ WeatherData::WeatherData()
 }
 
 
+WeatherData::~WeatherData()
+{
+
+}
+
 void
 WeatherData::registerObserver(Observer* obs)
 {
@@ -36,7 +41,7 @@ WeatherData::notifyObservers()
     for (ObsVec::iterator it = d_observers.begin();
             it != d_observers.end(); ++it)
     {
-        it->update(d_temperature, d_humidity, d_pressure);
+        (*it)->update(d_temperature, d_humidity, d_pressure);
     }
 }
 

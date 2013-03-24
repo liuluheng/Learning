@@ -12,7 +12,12 @@ WeatherData::WeatherData()
 
 WeatherData::~WeatherData()
 {
-
+    for (ObsVec::iterator it = d_observers.begin();
+            it != d_observers.end(); ++it)
+    {
+        if (*it)
+            delete *it;
+    }
 }
 
 void
@@ -29,6 +34,8 @@ WeatherData::removeObserver(Observer* obs)
     {
         if (*it == obs)
         {            
+            if (*it)
+                delete *it;
             d_observers.erase(it);
             break;
         }

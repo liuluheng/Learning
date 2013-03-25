@@ -61,5 +61,25 @@ int main(int argc, const char *argv[])
     remoteControl->offButtonWasPushed(2);
     remoteControl->onButtonWasPushed(3);
     remoteControl->offButtonWasPushed(3);
+   
+    delete remote;
+    delete light;
+    delete garageDoor;
+    delete lightOn;
+    delete garageOpen;
+    delete livingRoomLight;
+    delete kitchenLight;
+    delete ceilingFan;
+    delete stereo;
+    delete livingRoomLightOn;
+    delete livingRoomLightOff;
+    delete kitchenLightOn;
+    delete kitchenLightOff;
+    delete ceilingFanOn;
+    delete ceilingFanOff;
+    delete garageDoorUp;
+    delete garageDoorDown;
+    delete stereoOnWithCD;
+    delete stereoOff;
 
 }

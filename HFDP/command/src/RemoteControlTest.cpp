@@ -4,7 +4,7 @@
 #include "GarageDoor.h"
 
 
-int main(int argc, const char *argv[])
+int umain(int argc, const char *argv[])
 {
     SimpleRemoteControl* remote = new SimpleRemoteControl();
     Light* light = new Light();

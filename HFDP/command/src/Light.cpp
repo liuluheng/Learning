@@ -1,9 +1,11 @@
 #include "Light.h"
 #include <stdio.h>
+#include <string>
 
-Light::Light()
+Light::Light(const std::string& location)
+    : d_location(location)
 {
-
+    
 }
 
 Light::~Light()
@@ -14,12 +16,12 @@ Light::~Light()
 void
 Light::on() 
 {
-    printf("Light is on\n");
+    printf("%s Light is on\n", d_location.c_str());
 }
 
 void
 Light::off() 
 {
-    printf("Light is off\n");
+    printf("%s Light is off\n", d_location.c_str());
 }
 

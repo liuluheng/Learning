@@ -1,4 +1,6 @@
+
 #include "Command.h"
+#include "SimpleRemoteControl.h"
 #include "RemoteControl.h"
 #include "Light.h"
 #include "CeilingFan.h"
@@ -24,10 +26,10 @@ int main(int argc, const char *argv[])
     // 2nd test
     RemoteControl* remoteControl = new RemoteControl();
 
-    Light livingRoomLight* = new Light("Living Room");
-    Light kitchenLight* = new Light("Kitchen");
+    Light* livingRoomLight = new Light("Living Room");
+    Light* kitchenLight = new Light("Kitchen");
     CeilingFan* ceilingFan= new CeilingFan("Living Room");
-    GarageDoor* garageDoor = new GarageDoor("");
+    // GarageDoor* garageDoor = new GarageDoor("");
     Stereo* stereo = new Stereo("Living Room");
 
     LightOnCommand* livingRoomLightOn = new LightOnCommand(livingRoomLight);

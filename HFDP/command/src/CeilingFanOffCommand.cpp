@@ -15,6 +15,6 @@ CeilingFanOffCommand::~CeilingFanOffCommand()
 void 
 CeilingFanOffCommand::execute()
 {
-    d_ceiling->off();
+    d_ceilingFan->off();
 }
 

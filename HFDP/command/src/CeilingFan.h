@@ -15,14 +15,14 @@ public:
     };
 
 public:
-    CeilingFan(std::string& location);
+    CeilingFan(const std::string& location);
     ~CeilingFan();
 
     void high();
     void medium();
     void low();
     void off();
-    void getSpeed() const;
+    SPEED getSpeed() const;
 
 private:
     std::string         d_location;

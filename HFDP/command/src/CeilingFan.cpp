@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 CeilingFan::CeilingFan(const std::string& location)
-    d_location(location)
-    d_level(STOP)
+    : d_location(location)
+    , d_level(STOP)
 {
     
 }

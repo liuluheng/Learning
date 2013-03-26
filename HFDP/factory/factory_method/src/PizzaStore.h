@@ -8,7 +8,7 @@ class PizzaStore
 {
 public:
     PizzaStore();
-    virtual ~PizzaStore();
+    virtual ~PizzaStore() = 0;
 
     virtual Pizza* orderPizza(const std::string& type);
 
@@ -19,28 +19,12 @@ protected:
 
 class ChicagoPizzaStore : public PizzaStore
 {
-public:
-    ChicagoPizzaStore(){};
-    virtual ~ChicagoPizzaStore(){};
-    virtual Pizza* orderPizza(const std::string& type)
-    {
-        return PizzaStore::orderPizza(type);
-    }
-
 protected:
     virtual Pizza* createPizza(const std::string& type);
 };
 
 class NYPizzaStore : public PizzaStore
 {
-public:
-    NYPizzaStore(){};
-    virtual ~NYPizzaStore(){};
-    virtual Pizza* orderPizza(const std::string& type)
-    {
-        return PizzaStore::orderPizza(type);
-    }
-
 protected:
     virtual Pizza* createPizza(const std::string& type);
 };

@@ -30,5 +30,10 @@ int main(int argc, const char *argv[])
 
     pizza = chicagoStore->orderPizza("veggie");
     printf("Joel ordered a %s\n\n" , pizza->getName().c_str());
+
+    // TODO manage the pizza memory leakage
+
+    delete nyStore;
+    delete chicagoStore;
     return 0;
 }

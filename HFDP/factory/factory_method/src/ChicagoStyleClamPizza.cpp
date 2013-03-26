@@ -12,7 +12,7 @@ ChicagoStyleClamPizza::ChicagoStyleClamPizza()
     d_toppings.push_back("Frozen Clams from Chesapeake Bay");
 }
 
-ChicagoStyleClamPizza~ChicagoStyleClamPizza()
+ChicagoStyleClamPizza::~ChicagoStyleClamPizza()
 {
 
 }

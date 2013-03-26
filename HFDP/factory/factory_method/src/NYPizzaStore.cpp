@@ -2,6 +2,9 @@
 #include "Pizza.h"
 #include <string>
 
+using namespace std;
+
+Pizza*
 NYPizzaStore::createPizza(const std::string& item)
 {
     if (item == string("cheese")) 
@@ -22,5 +25,4 @@ NYPizzaStore::createPizza(const std::string& item)
     }
     else
         return 0;
-
 }

@@ -1,4 +1,4 @@
-#include "ChicagoStyleCheesePizza.h"
+#include "Pizza.h"
 #include <stdio.h>
 #include <string>
 

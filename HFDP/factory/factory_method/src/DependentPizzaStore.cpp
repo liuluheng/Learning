@@ -1,10 +1,13 @@
 #include "PizzaStore.h"
 #include "Pizza.h"
 #include <string>
+#include <stdio.h>
+
+using namespace std;
 
 Pizza*
-DependentPizzaStore::createPizza(const std::string& style, 
-                                 const std::string& type)
+DependentPizzaStore::createPizza(const string& style, 
+                                 const string& type)
 {
     Pizza* pizza = 0;
     if (style == string("NY")) 

@@ -2,12 +2,13 @@
 #define _TURKEYADAPTER_H_
 
 #include "Duck.h"
+#include "Turkey.h"
 
 class TurkeyAdapter : public Duck
 {
 public:
     TurkeyAdapter(Turkey* turkey)
-        : d_turkey(trukey)
+        : d_turkey(turkey)
     {
     }
 
@@ -26,6 +27,6 @@ public:
 
 private:
     Turkey*         d_turkey;
-}
+};
 
 #endif

@@ -18,7 +18,7 @@ class MarinaraSauce : public Sauce
 public:
     virtual std::string toString()
     {
-        return  string("Marinara Sauce");
+        return  "Marinara Sauce";
     }
 };
 
@@ -28,7 +28,7 @@ class PlumTomatoSauce : public Sauce
 public:
     virtual std::string toString()
     {
-        return  string("Tomato sauce with plum tomatoes");
+        return  "Tomato sauce with plum tomatoes";
     }
 };
 

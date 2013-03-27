@@ -17,7 +17,7 @@ class FreshClams : public Clams
 public:
     virtual std::string toString()
     {
-		return string("Fresh Clams from Long Island Sound");
+		return "Fresh Clams from Long Island Sound";
     }
 };
 
@@ -26,7 +26,7 @@ class FrozenClams : public Clams
 public:
     virtual std::string toString()
     {
-		return string("Frozen Clams from Chesapeake Bay");
+		return "Frozen Clams from Chesapeake Bay";
     }
 };
 #endif

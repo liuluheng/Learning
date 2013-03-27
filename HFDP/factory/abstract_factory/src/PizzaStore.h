@@ -2,6 +2,7 @@
 #define _PIZZASTORE_H_
 
 #include "Pizza.h"
+#include "PizzaIngredientFactory.h"
 
 class PizzaStore 
 {

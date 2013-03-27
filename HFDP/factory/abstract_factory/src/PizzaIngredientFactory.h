@@ -1,6 +1,15 @@
 #ifndef _PIZZAINGREDIENTFACTORY_H_
 #define _PIZZAINGREDIENTFACTORY_H_
 
+#include "Dough.h"
+#include "Sauce.h"
+#include "Cheese.h"
+#include "Veggies.h"
+#include "Pepperoni.h"
+#include "Clams.h"
+#include <vector>
+
+
 class PizzaIngredientFactory 
 {
 public:

@@ -6,9 +6,6 @@
 class Veggies 
 {
 public:
-    Veggies(arguments){};
-    virtual ~Veggies(){};
-
     virtual std::string toString() = 0;
 };
 
@@ -17,7 +14,7 @@ class BlackOlives : public Veggies
 public:
     virtual std::string toString()
     {
-        return string("Black Olives");
+        return "Black Olives";
     }
 };
 
@@ -27,7 +24,7 @@ class Eggplant : public Veggies
 public:
     virtual std::string toString()
     {
-        return string("Eggplant");
+        return "Eggplant";
     }
 };
 
@@ -36,7 +33,7 @@ class Garlic : public Veggies
 public:
     virtual std::string toString()
     {
-        return string("Garlic");
+        return "Garlic";
     }
 };
 
@@ -45,7 +42,7 @@ class Mushroom : public Veggies
 public:
     virtual std::string toString()
     {
-		return string("Mushrooms");
+		return "Mushrooms";
     }
 };
 
@@ -54,7 +51,7 @@ class Onion : public Veggies
 public:
     virtual std::string toString()
     {
-		return string("Onion");
+		return "Onion";
     }
 };
 
@@ -63,7 +60,7 @@ class RedPepper : public Veggies
 public:
     virtual std::string toString()
     {
-		return string("Red Pepper");
+		return "Red Pepper";
     }
 };
 
@@ -73,7 +70,7 @@ class Spinach : public Veggies
 public:
     virtual std::string toString()
     {
-		return string("Spinach");
+		return "Spinach";
     }
 };
 

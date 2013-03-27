@@ -4,6 +4,11 @@
 
 #include <string>
 #include <vector>
+#include <stdio.h>
+#include "Dough.h"
+#include "Sauce.h"
+#include "Clams.h"
+#include "Veggies.h"
 
 class Pizza
 {

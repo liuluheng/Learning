@@ -73,4 +73,5 @@ clean:
 	-$(RM) $(OBJECTS)
 	-$(RM) $(TARGET)
 	-$(RM) $(DEPEND)
+	-$(RM) *.gch
 

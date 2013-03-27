@@ -8,7 +8,10 @@
 #include "Dough.h"
 #include "Sauce.h"
 #include "Clams.h"
+#include "Cheese.h"
 #include "Veggies.h"
+#include "Pepperoni.h"
+#include "PizzaIngredientFactory.h"
 
 class Pizza
 {
@@ -74,7 +77,7 @@ public:
 		}
         for (size_t i = 0; i < d_veggies.size(); i++) 
         {
-            result += veggies[i]->toString();
+            result += d_veggies[i]->toString();
             if (i < d_veggies.size()-1) 
             {
                 result += ", ";
@@ -115,9 +118,9 @@ public:
     virtual void prepare()
     {
 		printf("Preparing %s\n" , d_name.c_str());
-		d_dough = ingredientFactory->createDough();
-		d_sauce = ingredientFactory->createSauce();
-		d_cheese = ingredientFactory->createCheese();
+		d_dough = d_ingredientFactory->createDough();
+		d_sauce = d_ingredientFactory->createSauce();
+		d_cheese = d_ingredientFactory->createCheese();
     }
 
 private:
@@ -134,11 +137,13 @@ public:
     virtual void prepare()
     {
 		printf("Preparing %s\n" , d_name.c_str());
-		d_dough = ingredientFactory->createDough();
-		d_sauce = ingredientFactory->createSauce();
-		d_cheese = ingredientFactory->createCheese();
-		d_clam = ingredientFactory->createClam();
+		d_dough = d_ingredientFactory->createDough();
+		d_sauce = d_ingredientFactory->createSauce();
+		d_cheese = d_ingredientFactory->createCheese();
+		d_clam = d_ingredientFactory->createClam();
     }
+private:
+    PizzaIngredientFactory*         d_ingredientFactory;
 };
 
 class PepperoniPizza : public Pizza
@@ -151,11 +156,11 @@ public:
     virtual void prepare()
     {
 		printf("Preparing %s\n" , d_name.c_str());
-		d_dough = ingredientFactory->createDough();
-		d_sauce = ingredientFactory->createSauce();
-		d_cheese = ingredientFactory->createCheese();
-		d_veggies = ingredientFactory->createVeggies();
-		d_pepperoni = ingredientFactory->createPepperoni();
+		d_dough = d_ingredientFactory->createDough();
+		d_sauce = d_ingredientFactory->createSauce();
+		d_cheese = d_ingredientFactory->createCheese();
+		d_veggies = d_ingredientFactory->createVeggies();
+		d_pepperoni = d_ingredientFactory->createPepperoni();
     }
 
 private:
@@ -172,10 +177,10 @@ public:
 	virtual void prepare()
     {
 		printf("Preparing %s\n" , d_name.c_str());
-		d_dough = ingredientFactory->createDough();
-		d_sauce = ingredientFactory->createSauce();
-		d_cheese = ingredientFactory->createCheese();
-		d_veggies = ingredientFactory->createVeggies();
+		d_dough = d_ingredientFactory->createDough();
+		d_sauce = d_ingredientFactory->createSauce();
+		d_cheese = d_ingredientFactory->createCheese();
+		d_veggies = d_ingredientFactory->createVeggies();
     }
 private:
     PizzaIngredientFactory*         d_ingredientFactory;

@@ -3,6 +3,8 @@
 
 #include "Pizza.h"
 #include "PizzaIngredientFactory.h"
+#include <string>
+#include <stdio.h>
 
 class PizzaStore 
 {
@@ -13,7 +15,7 @@ public:
     virtual Pizza* orderPizza(const std::string& type)
     {
         Pizza* pizza = createPizza(type); 
-        printf("--- Making a %s ---\n", pizza->getName());
+        printf("--- Making a %s ---\n", pizza->getName().c_str());
         pizza->prepare();
         pizza->bake();
         pizza->cut();
@@ -22,7 +24,7 @@ public:
     }
 
 protected:
-    Pizza* createPizza(const std::string& item)=0;
+    virtual Pizza* createPizza(const std::string& item)=0;
 };
 
 class ChicagoPizzaStore : public PizzaStore
@@ -34,22 +36,22 @@ protected:
 		PizzaIngredientFactory* ingredientFactory =
                           new ChicagoPizzaIngredientFactory();
 
-		if (item == string("cheese")) {
+		if (item == std::string("cheese")) {
 
 			pizza = new CheesePizza(ingredientFactory);
 			pizza->setName("Chicago Style Cheese Pizza");
 
-		} else if (item == string("veggie")) {
+		} else if (item == std::string("veggie")) {
 
 			pizza = new VeggiePizza(ingredientFactory);
 			pizza->setName("Chicago Style Veggie Pizza");
 
-		} else if (item == string("clam")) {
+		} else if (item == std::string("clam")) {
 
 			pizza = new ClamPizza(ingredientFactory);
 			pizza->setName("Chicago Style Clam Pizza");
 
-		} else if (item == string("pepperoni")) {
+		} else if (item == std::string("pepperoni")) {
 
 			pizza = new PepperoniPizza(ingredientFactory);
 			pizza->setName("Chicago Style Pepperoni Pizza");
@@ -68,22 +70,22 @@ protected:
 		PizzaIngredientFactory* ingredientFactory = 
 			new NYPizzaIngredientFactory();
  
-		if (item == string("cheese")) {
+		if (item == std::string("cheese")) {
   
 			pizza = new CheesePizza(ingredientFactory);
 			pizza->setName("New York Style Cheese Pizza");
   
-		} else if (item == string("veggie")) {
+		} else if (item == std::string("veggie")) {
  
 			pizza = new VeggiePizza(ingredientFactory);
 			pizza->setName("New York Style Veggie Pizza");
  
-		} else if (item == string("clam")) {
+		} else if (item == std::string("clam")) {
  
 			pizza = new ClamPizza(ingredientFactory);
 			pizza->setName("New York Style Clam Pizza");
  
-		} else if (item == string("pepperoni")) {
+		} else if (item == std::string("pepperoni")) {
 
 			pizza = new PepperoniPizza(ingredientFactory);
 			pizza->setName("New York Style Pepperoni Pizza");

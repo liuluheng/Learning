@@ -8,7 +8,7 @@ int main(int argc, const char *argv[])
     PizzaStore* chicagoStore = new ChicagoPizzaStore();
 
     Pizza* pizza = nyStore->orderPizza("cheese");
-    printf("Ethan ordered a %s\n" , pizza->getName().c_str() );
+    printf("Ethan ordered a %s\n\n" , pizza->getName().c_str() );
 
     if (pizza)
     {
@@ -17,7 +17,7 @@ int main(int argc, const char *argv[])
     }
 
     pizza = chicagoStore->orderPizza("cheese");
-    printf("Joel ordered a %s\n" , pizza->getName().c_str());
+    printf("Joel ordered a %s\n\n" , pizza->getName().c_str());
 
     if (pizza)
     {
@@ -26,7 +26,7 @@ int main(int argc, const char *argv[])
     }
 
     pizza = nyStore->orderPizza("clam");
-    printf("Ethan ordered a %s\n" , pizza->getName().c_str());
+    printf("Ethan ordered a %s\n\n" , pizza->getName().c_str());
 
     if (pizza)
     {
@@ -35,7 +35,7 @@ int main(int argc, const char *argv[])
     }
     
     pizza = chicagoStore->orderPizza("clam");
-    printf("Joel ordered a %s\n" , pizza->getName().c_str());
+    printf("Joel ordered a %s\n\n" , pizza->getName().c_str());
 
     if (pizza)
     {
@@ -44,7 +44,7 @@ int main(int argc, const char *argv[])
     }
     
     pizza = nyStore->orderPizza("pepperoni");
-    printf("Ethan ordered a %s\n" , pizza->getName().c_str());
+    printf("Ethan ordered a %s\n\n" , pizza->getName().c_str());
 
     if (pizza)
     {
@@ -53,7 +53,7 @@ int main(int argc, const char *argv[])
     }
     
     pizza = chicagoStore->orderPizza("pepperoni");
-    printf("Joel ordered a %s\n", pizza->getName().c_str());
+    printf("Joel ordered a %s\n\n", pizza->getName().c_str());
 
     if (pizza)
     {
@@ -62,7 +62,7 @@ int main(int argc, const char *argv[])
     }
     
     pizza = nyStore->orderPizza("veggie");
-    printf("Ethan ordered a %s\n", pizza->getName().c_str());
+    printf("Ethan ordered a %s\n\n", pizza->getName().c_str());
 
     if (pizza)
     {
@@ -71,7 +71,7 @@ int main(int argc, const char *argv[])
     }
     
     pizza = chicagoStore->orderPizza("veggie");
-    printf("Joel ordered a %s\n" , pizza->getName().c_str()  );
+    printf("Joel ordered a %s\n\n" , pizza->getName().c_str()  );
 
     if (pizza)
     {

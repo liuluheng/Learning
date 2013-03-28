@@ -26,4 +26,6 @@ Firstly, *vfork* is used to call *exec* and it is more efficiency than *fork*, s
 
 Secondly, *vfork* guarantees that the child runs first.
 
-
+8.5 exit Functions
+--------------------
+UNIX System terminology, a process that has terminated, but whose parent has not yet waied for it, is called a **zombie**

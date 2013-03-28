@@ -50,8 +50,9 @@ public:
 		printf(description + " paused \"" + title + "\"");
 	}
  
-	std::string tostd::string() {
-		return description;
+	std::string toString() 
+    {
+		return d_description;
 	}
 private:
     std::string         d_description;

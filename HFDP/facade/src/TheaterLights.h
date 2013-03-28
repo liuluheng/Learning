@@ -7,8 +7,9 @@
 class TheaterLights 
 {
 public:
-	TheaterLights(const std::string& description) {
-		this.d_description = description;
+	TheaterLights(const std::string& description) 
+        : d_description(description)
+    {
 	}
   
 	void on() {

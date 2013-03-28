@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+class Amplifier;
 
 class DvdPlayer 
 {
@@ -19,7 +20,7 @@ public:
         std::cout << d_description <<  " on" << std::endl;
 	}
  
-	public void off() 
+	void off() 
     {
         std::cout << d_description <<  " off" << std::endl;
 	}
@@ -27,7 +28,7 @@ public:
     void eject() 
     {
 		d_movie.clear();
-        cout << d_description <<  " eject" << std::endl;
+        std::cout << d_description <<  " eject" << std::endl;
     }
  
 	void play(const std::string& movie) 
@@ -41,8 +42,8 @@ public:
     {
 		if (d_movie.empty())
         {
-			cout << d_description << " can't play track "
-                 << d_track <<  " no dvd inserted" << std::endl;
+            std::cout << d_description << " can't play track "
+                 << track <<  " no dvd inserted" << std::endl;
 		} else {
 			d_currentTrack = track;
             std::cout << d_description << " playing track " 

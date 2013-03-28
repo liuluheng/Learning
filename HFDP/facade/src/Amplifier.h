@@ -3,6 +3,10 @@
 
 #include <string>
 #include <stdio.h>
+#include "Tuner.h"
+#include "DvdPlayer.h"
+#include "CdPlayer.h"
+
 
 class Amplifier 
 {
@@ -58,7 +62,7 @@ public:
 	}
  
     std::string toString() {
-		return description;
+		return d_description;
 	}
 private:
     std::string         d_description;

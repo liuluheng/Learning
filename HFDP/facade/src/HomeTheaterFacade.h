@@ -3,6 +3,15 @@
 
 #include <string>
 #include <iostream>
+#include "Amplifier.h"
+#include "Tuner.h"
+#include "DvdPlayer.h"
+#include "CdPlayer.h"
+#include "TheaterLights.h"
+#include "PopcornPopper.h"
+#include "Projector.h"
+#include "Screen.h"
+
 
 class HomeTheaterFacade 
 {
@@ -36,7 +45,7 @@ public:
 		d_projector->on();
 		d_projector->wideScreenMode();
 		d_amp->on();
-		d_amp->setDvd(dvd);
+		d_amp->setDvd(d_dvd);
 		d_amp->setSurroundSound();
 		d_amp->setVolume(5);
 		d_dvd->on();
@@ -46,17 +55,17 @@ public:
  
 	void endMovie() {
         std::cout << "Shutting movie theater down..." << std::endl;
-		popper->off();
-		lights->on();
-		screen->up();
-		projector->off();
-		amp->off();
-		dvd->stop();
-		dvd->eject();
-		dvd->off();
+		d_popper->off();
+		d_lights->on();
+		d_screen->up();
+		d_projector->off();
+		d_amp->off();
+		d_dvd->stop();
+		d_dvd->eject();
+		d_dvd->off();
 	}
 
-	void listenToCd(String cdTitle) {
+	void listenToCd(const std::string& cdTitle) {
         std::cout << "Get ready for an audiopile experence..." << std::endl;
 		d_lights->on();
 		d_amp->on();
@@ -68,9 +77,9 @@ public:
 	}
 
 	void endCd() {
-		cout << "Shutting down CD..." << endl;
+        std::cout << "Shutting down CD..." << std::endl;
 		d_amp->off();
-		d_amp->setCd(cd);
+		d_amp->setCd(d_cd);
 		d_cd->eject();
 		d_cd->off();
 	}
@@ -81,11 +90,11 @@ public:
 		d_tuner->setFrequency(frequency);
 		d_amp->on();
 		d_amp->setVolume(5);
-		d_amp->setTuner(tuner);
+		d_amp->setTuner(d_tuner);
 	}
 
 	void endRadio() {
-        std::cout << "Shutting down the tuner..." << endl;
+        std::cout << "Shutting down the tuner..." << std::endl;
 		d_tuner->off();
 		d_amp->off();
 	}

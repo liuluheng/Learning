@@ -22,7 +22,7 @@ public:
  
 
     std::string toString() {
-        return description;
+        return d_description;
     }
 
 private:

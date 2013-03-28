@@ -4,6 +4,8 @@
 #include <string>
 #include <stdio.h>
 
+class Amplifier;
+
 class CdPlayer 
 {
 public:
@@ -34,20 +36,20 @@ public:
 	void play(int track) {
 		if (d_title.empty()) {
 			printf("%s can't play track %d, no cd inserted\n", 
-                    d_description.c_str(), currentTrack )
+                    d_description.c_str(), d_currentTrack );
 		} else {
 			d_currentTrack = track;
-			printf("%s playing track %d\n" , d_description.c_str(), currentTrack);
+			printf("%s playing track %d\n" , d_description.c_str(), d_currentTrack);
 		}
 	}
 
 	void stop() {
-		currentTrack = 0;
-		printf(description + " stopped");
+		d_currentTrack = 0;
+		printf("%s stopped\n", d_description.c_str());
 	}
  
 	void pause() {
-		printf(description + " paused \"" + title + "\"");
+		printf("%s paused \"%s\"\n", d_description.c_str(), d_title.c_str());
 	}
  
 	std::string toString() 

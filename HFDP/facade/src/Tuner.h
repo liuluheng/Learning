@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+class Amplifier;
+
 class Tuner 
 {
 public:
@@ -15,28 +17,28 @@ public:
 
     void on()
     {
-        std::cout << d_description << " on" << endl;
+        std::cout << d_description << " on" << std::endl;
     }
 
     void off()
     {
-        std::cout << d_description << " off" << endl;
+        std::cout << d_description << " off" << std::endl;
     }
 
     void setFrequency(const double freq)
     {
-        cout << d_description << " setting frequency to  " << freq << std::endl;
+        std::cout << d_description << " setting frequency to  " << freq << std::endl;
         d_frequency = freq;
     }
 
     void setAm()
     {
-        cout << d_description << " setting AM mode" << std::endl;
+        std::cout << d_description << " setting AM mode" << std::endl;
     }
 
     void setFm()
     {
-        cout << d_description << " setting FM mode" << std::endl;
+        std::cout << d_description << " setting FM mode" << std::endl;
     }
 
     std::string toString()

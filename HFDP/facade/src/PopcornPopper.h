@@ -2,12 +2,13 @@
 #define _POPCORNPOPPER_H_
 
 #include <string>
+#include <iostream>
 
 class PopcornPopper 
 {
 public:
 	PopcornPopper(const std::string& description) 
-		d_description(description)
+		: d_description(description)
     {
 	}
  

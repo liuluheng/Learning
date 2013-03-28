@@ -1,6 +1,12 @@
 #ifndef _PROJECTOR_H_
 #define _PROJECTOR_H_
 
+#include <iostream>
+#include <string>
+
+class DvdPlayer;
+
+
 class Projector 
 {
 public:
@@ -19,7 +25,7 @@ public:
 	}
 
 	void wideScreenMode() {
-		std::cout << description << " in widescreen mode (16x9 aspect ratio)" << std::endl;
+		std::cout << d_description << " in widescreen mode (16x9 aspect ratio)" << std::endl;
 	}
 
 	void tvMode() {

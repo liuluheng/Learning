@@ -1,3 +1,13 @@
+#include "Amplifier.h"
+#include "Tuner.h"
+#include "DvdPlayer.h"
+#include "CdPlayer.h"
+#include "Projector.h"
+#include "TheaterLights.h"
+#include "Screen.h"
+#include "PopcornPopper.h"
+#include "HomeTheaterFacade.h"
+
 
 int main(int argc, const char *argv[])
 {

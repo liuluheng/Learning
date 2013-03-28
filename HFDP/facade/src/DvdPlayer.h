@@ -70,7 +70,8 @@ public:
         std::cout << d_description << " set surround audio" << std::endl;
 	}
  
-    std::string toString() {
+    std::string toString() 
+    {
 		return d_description;
 	}
 private:

@@ -46,5 +46,7 @@ int main(int argc, const char *argv[])
     gumballMachine->turnCrank();
 
     cout << gumballMachine->toString() << endl;
+
+    delete gumballMachine;
     return 0;
 }

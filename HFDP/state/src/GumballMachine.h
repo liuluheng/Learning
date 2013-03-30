@@ -52,7 +52,7 @@ public:
 
     State* getSoldState() const
     {
-        return d_soldState;
+        return d_sold;
     }
 
     State* getWinnerState()  const
@@ -60,11 +60,9 @@ public:
         return d_winner;
     }
 
-    std::string toString() const ;
-private:
-
 	void releaseBall();
- 
+
+
 	int getCount()  const
     {
 		return d_count;
@@ -75,9 +73,11 @@ private:
         if ( count > 0 )
         {
 		    d_count = count;
-		    state = noQuarterState;
+		    d_currentState= d_noQuarter;
         }
 	}
+
+    std::string toString() const ;
 
 private:
     State*      d_soldOut;

@@ -1,5 +1,6 @@
 #include "GumballMachine.h"
 #include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
@@ -45,18 +46,16 @@ GumballMachine::releaseBall()
 }
 
 string 
-GumballMachine::toString() 
+GumballMachine::toString() const
 {
     string result("\nMighty Gumball, Inc.");
-    result += "\nJava-enabled Standing Gumball Model #2004";
+    result += "\nC++-enabled Standing Gumball Model #2013";
     char buf[100];
-    snprintf(buf, 100, "%d", d_count)
-    result += "\nInventory: " + buf + " gumball";
-    if (count > 1) 
-    {
+    snprintf(buf, 100, "%d", d_count);
+    result += string("\nInventory: ") + buf + " gumball";
+    if (d_count > 1) 
         result += "s";
-    }
-    result += "\nMachine is " + d_state->toString() + "\n";
-    return result:
+    result += "\nMachine is " + d_currentState->toString() + "\n";
+    return result;
 }
 

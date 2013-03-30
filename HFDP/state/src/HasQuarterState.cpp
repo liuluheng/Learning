@@ -1,3 +1,4 @@
+#include "GumballMachine.h"
 #include "State.h"
 #include <iostream>
 #include <string>
@@ -38,7 +39,7 @@ HasQuarterState::dispense() {
 }
 
 string 
-HasQuarterState::toString() 
+HasQuarterState::toString()  const
 {
     return "waiting for turn of crank";
 }

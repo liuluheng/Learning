@@ -1,3 +1,4 @@
+#include "GumballMachine.h"
 #include "State.h"
 #include <iostream>
 #include <string>
@@ -29,14 +30,16 @@ SoldState::dispense()
     d_machine->releaseBall();
     if (d_machine->getCount() > 0) {
         d_machine->setState(d_machine->getNoQuarterState());
-    } else {
-        cout("Oops, out of gumballs!");
+    }
+    else 
+    {
+        cout << "Oops, out of gumballs!" << endl;
         d_machine->setState(d_machine->getSoldOutState());
     }
 }
 
 string 
-SoldState::toString() 
+SoldState::toString()  const
 {
     return "dispensing a gumball";
 }

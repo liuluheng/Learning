@@ -1,3 +1,4 @@
+#include "GumballMachine.h"
 #include "State.h"
 #include <iostream>
 #include <string>
@@ -30,7 +31,7 @@ NoQuarterState::dispense()
 } 
 
 string 
-NoQuarterState::toString() 
+NoQuarterState::toString()  const
 {
     return "waiting for quarter";
 }

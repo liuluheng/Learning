@@ -1,3 +1,4 @@
+#include "GumballMachine.h"
 #include "State.h"
 #include <iostream>
 #include <string>
@@ -30,7 +31,7 @@ SoldOutState::dispense()
 }
 
 string 
-SoldOutState::toString() 
+SoldOutState::toString()  const
 {
     return "sold out";
 }

@@ -2,7 +2,8 @@
 #define _STATE_H_
 
 #include <string>
-#include "GumballMachine.h" 
+
+class GumballMachine;
 
 class State 
 {
@@ -14,7 +15,7 @@ public:
 	virtual void ejectQuarter() = 0;
 	virtual void turnCrank() = 0;
 	virtual void dispense() = 0;
-    virtual void toString()
+    virtual std::string toString() const
     {
         return "base state";
     }
@@ -24,7 +25,7 @@ class HasQuarterState : public State
 {
 public:
     HasQuarterState(GumballMachine* mac)
-        , d_machine(mac)
+        : d_machine(mac)
     {}
 
     virtual ~HasQuarterState(){}
@@ -33,17 +34,17 @@ public:
 	virtual void ejectQuarter();
 	virtual void turnCrank();
 	virtual void dispense();
-    virtual std::string toString();
+    virtual std::string toString() const;
 
 private:
-    GumballMachine*         d_machine
+    GumballMachine*         d_machine;
 };
 
 class NoQuarterState : public State
 {
 public:
     NoQuarterState(GumballMachine* mac)
-        , d_machine(mac)
+        : d_machine(mac)
     {}
 
     virtual ~NoQuarterState(){}
@@ -52,10 +53,10 @@ public:
 	virtual void ejectQuarter();
 	virtual void turnCrank();
 	virtual void dispense();
-    virtual std::string toString();
+    virtual std::string toString()const;
 
 private:
-    GumballMachine*         d_machine
+    GumballMachine*         d_machine;
 };
 
 
@@ -63,7 +64,7 @@ class SoldOutState : public State
 {
 public:
     SoldOutState(GumballMachine* mac)
-        , d_machine(mac)
+        : d_machine(mac)
     {}
 
     virtual ~SoldOutState(){}
@@ -72,10 +73,10 @@ public:
 	virtual void ejectQuarter();
 	virtual void turnCrank();
 	virtual void dispense();
-    virtual std::string toString();
+    virtual std::string toString()const;
 
 private:
-    GumballMachine*         d_machine
+    GumballMachine*         d_machine;
 };
 
 
@@ -83,7 +84,7 @@ class SoldState : public State
 {
 public:
     SoldState(GumballMachine* mac)
-        , d_machine(mac)
+        : d_machine(mac)
     {}
 
     virtual ~SoldState(){}
@@ -92,17 +93,17 @@ public:
 	virtual void ejectQuarter();
 	virtual void turnCrank();
 	virtual void dispense();
-    virtual std::string toString();
+    virtual std::string toString()const;
 
 private:
-    GumballMachine*         d_machine
+    GumballMachine*         d_machine;
 };
 
 class WinnerState : public State
 {
 public:
     WinnerState(GumballMachine* mac)
-        , d_machine(mac)
+        : d_machine(mac)
     {}
 
     virtual ~WinnerState(){}
@@ -111,10 +112,10 @@ public:
 	virtual void ejectQuarter();
 	virtual void turnCrank();
 	virtual void dispense();
-    virtual std::string toString();
+    virtual std::string toString()const;
 
 private:
-    GumballMachine*         d_machine
+    GumballMachine*         d_machine;
 };
 
 #endif

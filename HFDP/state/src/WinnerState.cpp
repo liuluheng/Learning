@@ -1,3 +1,4 @@
+#include "GumballMachine.h"
 #include "State.h"
 #include <iostream>
 #include <string>
@@ -42,7 +43,7 @@ WinnerState::dispense()
 }
 
 string 
-WinnerState::toString() 
+WinnerState::toString() const
 {
     return "despensing two gumballs for your quarter, because YOU'RE A WINNER!";
 }

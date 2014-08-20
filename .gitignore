@@ -23,3 +23,5 @@
 # dependence file
 *.d
 
+*.py
+*.pyc

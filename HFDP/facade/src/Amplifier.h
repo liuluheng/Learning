@@ -45,19 +45,19 @@ public:
 	void setTuner(Tuner* tuner) 
     {
 		printf("%s setting tuner to %s\n",
-                d_description.c_str(), d_dvd->toString().c_str());
+                d_description.c_str(), tuner->toString().c_str());
 		d_tuner = tuner;
 	}
   
 	void setDvd(DvdPlayer* dvd) {
 		printf("%s setting DVD to %s\n",
-                d_description.c_str(), d_dvd->toString().c_str());
+                d_description.c_str(), dvd->toString().c_str());
 		d_dvd = dvd;
 	}
  
 	void setCd(CdPlayer* cd) {
 		printf("%s setting CD to %s\n",
-                d_description.c_str(), d_cd->toString().c_str());
+                d_description.c_str(), cd->toString().c_str());
 		d_cd = cd;
 	}
  
